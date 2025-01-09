@@ -12,7 +12,9 @@ import Layout from './Layout';
 import axios from 'axios';
 // import './App.css'
 
+// axios.defaults.baseURL = 'http://localhost:3003';
 axios.defaults.baseURL = 'https://sample-auth.onrender.com';
+
 axios.defaults.withCredentials = true;
 
 const App = () => {
