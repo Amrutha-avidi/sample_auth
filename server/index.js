@@ -14,9 +14,10 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors({
+    origin: ['http://localhost:3000', 'https://deft-pudding-a6bed6.netlify.app'],
     credentials: true,
-   
-}))
+}));
+
 const PORT = 3003
 
 connectDB()
