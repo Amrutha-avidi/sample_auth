@@ -23,6 +23,7 @@ connectDB()
 app.post('/signup', async (req, res) => {
     try {
         const { userName, email, password } = req.body
+        console.log(userName)
         if (!userName) {
             return res.json({
                 error: 'name is required'
@@ -83,8 +84,10 @@ app.post('/login', async (req, res) => {
 })
 
 app.get("/profile", (req, res) => {
+    console.log(req)
 
     const {token} = req.cookies
+    console.log(token)
     if(token){
         jwt.verify(token,process.env.JWT_SECRET,{},(err,user)=>{
             if(err) throw err;
