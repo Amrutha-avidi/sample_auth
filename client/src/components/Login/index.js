@@ -26,7 +26,7 @@ const Login = () => {
       else {
         navigate("/")
         
-        setData({})
+        setData({ email: '', password: '' });
       }
 
 
