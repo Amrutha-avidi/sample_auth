@@ -19,7 +19,6 @@ export const UserContextProvider = ({ children }) => {
 
     fetchData();
   }, []); // Run only once on component mount
-
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}

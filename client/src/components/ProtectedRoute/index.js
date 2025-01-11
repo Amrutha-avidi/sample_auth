@@ -1,17 +1,4 @@
-// import { useContext } from 'react'
 
-// import { useNavigate} from 'react-router-dom';
-// import { UserContext } from '../../context/userContext';
-
-// // This component checks if the user is authenticated
-// const ProtectedRoute = ({ element }) => {
-//   const { user } = useContext(UserContext)
-//   const navigate = useNavigate()
- 
-//   return user ? element : navigate("/login") 
-// };
-
-// export default ProtectedRoute;
 
 import React from 'react';
 import { Navigate } from 'react-router-dom';
@@ -25,3 +12,4 @@ const ProtectedRoute = ({ children }) => {
 };
 
 export default ProtectedRoute;
+

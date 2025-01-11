@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import './index.css'; // Import the CSS file for styling
 import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../context/userContext';
 import axios from 'axios'
 
 const Login = () => {
   const navigate = useNavigate()
+    const { setUser } = useContext(UserContext);
+  
   const [data, setData] = useState({
     email: '',
     password: ''
@@ -18,13 +21,15 @@ const Login = () => {
       const { data } = await axios.post('/login', {
         email, password
       })
-      console.log(data)
+      
 
       if (data.error) {
         console.log(data.error)
       }
       else {
         navigate("/")
+        setUser(data)
+
         
         setData({ email: '', password: '' });
       }

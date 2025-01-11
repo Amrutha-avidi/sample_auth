@@ -26,7 +26,7 @@ const SignUp = () => {
       } else {
         
         navigate("/login")
-        setData({})
+        setData({userName:"", email: '', password: '' });
       }
     } catch (error) {
       console.log("error")
@@ -34,7 +34,6 @@ const SignUp = () => {
     }
   
   };
-
   return (
     <div className='main-con'>
       <form className="login-form" onSubmit={handleSubmit}>

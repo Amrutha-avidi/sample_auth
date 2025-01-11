@@ -23,12 +23,12 @@ const App = () => {
     <UserContextProvider> {/* Wrap the entire app */}
       <Router>
         <Routes>
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+          <Route  path="/signup" element={<SignUp />} />
+          <Route  path="/login" element={<Login />} />
 
           <Route element={<Layout />}>
 
-            <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route  path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
             <Route path="/contact" element={<ProtectedRoute><Contact /></ProtectedRoute>} />
             <Route path="/services" element={<ProtectedRoute><Services /></ProtectedRoute>} />
             {/* <Route path="*" element={<Navigate to="/" />} /> Redirect unknown routes to home */}
