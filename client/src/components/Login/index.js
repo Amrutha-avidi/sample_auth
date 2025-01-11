@@ -22,7 +22,6 @@ const Login = () => {
         email, password
       })
       
-
       if (data.error) {
         console.log(data.error)
       }

@@ -8,16 +8,17 @@ import './index.css'
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
   const [isOpen, setIsOpen] = useState(false)
-  
 
-  const toggleMenu = ()=>{setIsOpen(!isOpen)}
+
+  const toggleMenu = () => { setIsOpen(!isOpen) }
 
   const handleLogout = () => {
 
     // Remove the token cookie
     Cookies.remove('token'); // Adjust the cookie name according to your setup
+    setUser(null)
 
     navigate('/login'); // Adjust the route according to your app
   };
@@ -25,8 +26,8 @@ const Navbar = () => {
   return (
     <div className='nav-con'>
       <h1>Logo</h1>
-      <div 
-      className={`nav-links-con ${isOpen ? 'active' : ''}`}>
+      <div
+        className={`nav-links-con ${isOpen ? 'active' : ''}`}>
         <Link to='/' style={{ textDecoration: 'none' }}>Home</Link>
         <Link to='/services' style={{ textDecoration: 'none' }}>Our Services</Link>
         <Link to='/contactus' style={{ textDecoration: 'none' }}>Contact Us</Link>
